@@ -1,0 +1,188 @@
+/*
+ * The main dark mode styles
+ */
+
+ @mixin dark-scheme {
+  
+  /* Nord Colors */
+  --nord0: #2e3440;  // darkest gray
+  --nord1: #3b4252;  // darkerer gray
+  --nord2: #434c5e;  // darker gray
+  --nord3: #4c566a;  // dark gray
+  --nord4: #d8dee9;  // light gray
+  --nord5: #e5e9f0;  // lighter gray
+  --nord6: #eceff4;  // lightest gray
+  --nord7: #8fbcbb;  // green-blue
+  --nord8: #88c0d0;  // lightish-blue
+  --nord9: #81a1c1;  // blue
+  --nord10: #5e81ac; // darker-blue
+  --nord11: #bf616a; // red
+  --nord12: #d08770; // orange
+  --nord13: #ebcb8b; // amber
+  --nord14: #a3be8c; // green
+  --nord15: #b48ead; // purple
+
+  /* Framework color */
+  --body-bg: var(--main-wrapper-bg);
+  --mask-bg: rgb(68, 69, 70);
+  --main-wrapper-bg: var(--nord1);
+  --main-border-color: var(--nord2);
+
+  /* Common color */
+  --text-color: var(--nord5);
+  --text-muted-color: var(--nord4);
+  --heading-color: var(--nord6);
+  --blockquote-border-color: var(--nord4);
+  --blockquote-text-color: var(--nord4);
+  --link-color: var(--nord8);
+  --link-underline-color: var(--nord8);
+  --button-bg: var(--nord0);
+  --btn-border-color: var(--nord1);
+  --btn-backtotop-color: var(--text-color);
+  --btn-backtotop-border-color: var(--btn-border-color);
+  --btn-box-shadow: var(--main-wrapper-bg);
+  --card-header-bg: var(--nord0);
+  --label-color: var(--nord4);
+  --checkbox-color: rgb(118 120 121);
+  --checkbox-checked-color: var(--link-color);
+
+  /* Sidebar */
+  --sidebar-bg: var(--nord0);
+  --sidebar-muted-color: var(--nord4);
+  --sidebar-active-color: var(--nord8);
+  --nav-cursor-color: var(--nord8);
+  --sidebar-btn-bg: var(--nord1);
+  --sidebar-color: var(--nord4);
+
+  /* Topbar */
+  --topbar-text-color: var(--text-color);
+  --topbar-wrapper-bg: var(--nord0);
+  --search-wrapper-bg: var(--nord0);
+  --search-wrapper-border-color: var(--nord1);
+  --search-icon-color: var(--nord3);
+  --input-focus-border-color: var(--nord3);
+
+  /* Home page */
+  --post-list-text-color: var(nord5);
+  --btn-patinator-text-color: var(--text-color);
+  --btn-paginator-hover-color: var(--nord0);
+  --btn-paginator-border-color: var(--btn-border-color);
+  --btn-text-color: var(--text-color);
+  --pin-bg: var(--nord1);
+  --pin-color: inherit;
+
+  /* Posts */
+  --toc-highlight: var(--nord8); // Timeline next to the post
+  --tag-bg: var(--nord0);
+  --tag-hover: var(--nord3);
+  --tb-odd-bg: rgba(42, 47, 53, 0.52); /* odd rows of the posts' table */
+  --tb-even-bg: rgb(31, 31, 34); /* even rows of the posts' table */
+  --tb-border-color: var(--tb-odd-bg);
+  --footnote-target-bg: var(--nord10);
+  --btn-share-color: var(--nord4);
+  --btn-share-hover-color: var(--nord5);
+  --relate-post-date: var(--text-muted-color);
+  --card-bg: var(--nord0);
+  --card-border-color: var(--nord1);
+  --card-box-shadow: var(--main-wrapper-bg);
+  --preview-img-bg: radial-gradient(circle, rgb(22 22 24) 0%, rgb(32 32 32) 100%);
+  --kbd-wrap-color: #6a6a6a;
+  --kbd-text-color: #d3d3d3;
+  --kbd-bg-color: #242424;
+  --prompt-text-color: var(--nord6);
+  --prompt-tip-bg: var(--nord14);
+  --prompt-tip-icon-color: var(--nord6);
+  --prompt-info-bg: var(--nord10);
+  --prompt-info-icon-color: var(--nord6);
+  --prompt-warning-bg: var(--nord12);
+  --prompt-warning-icon-color: var(--nord6);
+  --prompt-danger-bg: var(--nord11);
+  --prompt-danger-icon-color: var(--nord6);
+
+  /* tags */
+  --tag-border: rgb(59, 79, 88);
+  --tag-shadow: rgb(32, 33, 33);
+  --search-tag-bg: var(--tag-bg);
+  --dash-color: rgb(63, 65, 68);
+
+  /* categories */
+  --categories-border: rgb(64, 66, 69);
+  --categories-hover-bg: rgb(73, 75, 76);
+  --categories-icon-hover-color: white;
+
+  /* archives */
+  --timeline-node-bg: rgb(150, 152, 156);
+  --timeline-color: rgb(63, 65, 68);
+  --timeline-year-dot-color: var(--timeline-color);
+
+  .post img[data-src] {
+    filter: brightness(95%);
+  }
+
+  hr {
+    border-color: var(--main-border-color);
+  }
+
+  /* posts' toc, override BS */
+  nav[data-toggle=toc] .nav-link.active,
+  nav[data-toggle=toc] .nav-link.active:focus,
+  nav[data-toggle=toc] .nav-link.active:hover,
+  nav[data-toggle=toc] .nav > li > a:focus,
+  nav[data-toggle=toc] .nav > li > a:hover {
+    color: var(--toc-highlight) !important;
+    border-left-color: var(--toc-highlight) !important;
+  }
+
+  /* categories */
+  .categories.card,
+  .list-group-item {
+    background-color: var(--card-bg);
+  }
+
+  .categories {
+    .card-header {
+      background-color: var(--card-header-bg);
+    }
+
+    .list-group-item {
+      border-left: none;
+      border-right: none;
+      padding-left: 2rem;
+      border-color: var(--categories-border);
+
+      &:last-child {
+        border-bottom-color: var(--card-bg);
+      }
+    }
+  }
+
+  .btn-outline-nord {
+    color: var(--nord8) !important;
+    border-color: transparent !important;
+  }
+
+  .btn-outline-nord:hover {
+    color: var(--nord8) !important;
+    border-color: var(--nord8) !important;
+    background-color: transparent !important;
+  }
+
+  #archives li:nth-child(odd) {
+    background-image:
+      linear-gradient(
+        to left,
+        rgb(26, 26, 30),
+        rgb(39, 39, 45),
+        rgb(39, 39, 45),
+        rgb(39, 39, 45),
+        rgb(26, 26, 30)
+      );
+  }
+
+  color-scheme: dark;
+
+  #disqus_thread {
+    color-scheme: none;
+  }
+
+} /* dark-scheme */
