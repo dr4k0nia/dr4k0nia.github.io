@@ -1,6 +1,6 @@
 In this post, I will be going over my process of analyzing a sample of ArechClient2. Including initial analysis, deobfuscation and unpacking of the loader. Followed by the analysis of the .NET payload revealing its config and C2 information.
 
-It began with [this tweet](https://twitter.com/Gi7w0rm/status/1614440406405496836) by [@Gi7w0rm](https://twitter.com/Gi7w0rm). They mentioned a few other researchers and me asking for help with analyzing this sample. I decided to look into the sample. After publishing some threat intel and a few updates on my re progress, I decided to write this report for a more detailed documentation of my analysis. The original sample can be found [here](https://tria.ge/230115-by7fcscb6w).
+It began with [this tweet](https://twitter.com/Gi7w0rm/status/1614440406405496836) by [@Gi7w0rm](https://twitter.com/Gi7w0rm). They mentioned me and a few others asking for help analyzing this sample. I decided to look into the sample. After publishing some threat intel and a few updates on my re progress on Twitter, I decided to write this report for a more detailed documentation of my analysis. The original sample can be found [here](https://tria.ge/230115-by7fcscb6w).
 
 ## Initial Analysis
 
