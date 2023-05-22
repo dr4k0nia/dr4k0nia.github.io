@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NixImpors a .NET loader using HInvoke
+title: NixImports a .NET loader using HInvoke
 date: 2023-05-22 15:27:24 +0200
 categories: dotnet malware redteam
 ---
