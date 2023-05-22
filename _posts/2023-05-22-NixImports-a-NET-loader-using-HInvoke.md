@@ -108,7 +108,7 @@ rule MAL_Msil_Net_NixImports_Loader {
 		$a1 = "GetRuntimeProperties" ascii fullword
 		$a2 = "GetTypes" ascii fullword
 		$a3 = "GetRuntimeMethods" ascii fullword
-      $a4 = "netstandard" ascii fullword
+        $a4 = "netstandard" ascii fullword
     condition:
         uint16(0) == 0x5a4d
 		and filesize < 3MB
